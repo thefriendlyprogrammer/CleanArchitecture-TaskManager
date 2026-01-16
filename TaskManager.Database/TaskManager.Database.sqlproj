@@ -68,4 +68,7 @@
     <Build Include="Tables\AspNetUserLogins.sql" />
     <Build Include="Tables\AspNetUserTokens.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskManager.Database.publish.xml" />
+  </ItemGroup>
 </Project>
