@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using TaskManager.Api.Middleware;
 using TaskManager.Application.Interfaces;
 using TaskManager.Application.Tasks.Commands;
+using TaskManager.Infrastructure.Identity;
 using TaskManager.Infrastructure.Persistence;
 using TaskManager.Infrastructure.Persistence.Mappings;
 using TaskManager.Infrastructure.Repositories;
-using Serilog;
 
 public partial class Program
 {
@@ -25,6 +27,10 @@ public partial class Program
 
         builder.Services.AddDbContext<TaskManagerDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("TaskManagerConnectionString")));
+
+        builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+            .AddEntityFrameworkStores<TaskManagerDbContext>()
+            .AddDefaultTokenProviders();
 
         builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 

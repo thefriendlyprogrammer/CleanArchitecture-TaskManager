@@ -14,5 +14,9 @@
     [TwoFactorEnabled] bit NOT NULL,
     [LockoutEnd] datetimeoffset NULL,
     [LockoutEnabled] bit NOT NULL,
-    [AccessFailedCount] int NOT NULL
+    [AccessFailedCount] int NOT NULL,
+    [CreatedById] INT NOT NULL,
+    [CreatedDateTime] DATETIMEOFFSET(7) NOT NULL DEFAULT SYSUTCDATETIME(),
+    [LastModifiedById] INT NULL,
+    [LastModifiedDateTime] DATETIMEOFFSET(7) NULL,
 );
