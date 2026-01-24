@@ -1,7 +1,7 @@
-﻿using TaskManager.Application.Tasks.Commands;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager.Api.Common;
 using MediatR;
+using TaskManager.Application.Features.Tasks.Commands;
 
 namespace TaskManager.Api.Controllers
 {

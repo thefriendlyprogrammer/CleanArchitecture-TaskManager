@@ -1,9 +1,9 @@
-﻿using TaskManager.Application.Tasks.Commands;
-using TaskManager.Application.Interfaces;
+﻿using TaskManager.Application.Interfaces;
 using TaskManager.Domain.Entities;
 using MediatR;
+using TaskManager.Application.Features.Tasks.Commands;
 
-namespace TaskManager.Application.Tasks.Handlers
+namespace TaskManager.Application.Features.Tasks.Handlers
 {
     public class CreateTaskHandler(ITaskRepository task) : IRequestHandler<CreateTaskCommand, Guid>
     {
